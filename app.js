@@ -1,8 +1,11 @@
 let nextDom = document.getElementById('next');
 let prevDom = document.getElementById('prev');
+let showDom = document.getElementById('show')
 let carouselDom = document.querySelector('.carousel');
 let listItemDom = document.querySelector('.carousel .list');
 let thumbnailDom = document.querySelector('.carousel .thumbnail');
+let playerMusicDom = document.querySelector('.player-music');
+
 
 nextDom.onclick = function(){
     showSlider('next');
@@ -14,6 +17,16 @@ prevDom.onclick = function(){
 
 let timeRunning = 3000;
 let runTimeOut;
+
+showDom.addEventListener("click", () => {
+    if(!playerMusicDom.classList.contains("showMore")) {
+        playerMusicDom.classList.add("showMore")
+        showDom.innerHTML = "&lt"
+    } else {
+        playerMusicDom.classList.remove("showMore")
+        showDom.innerHTML = ">"
+    }
+})
 
 function showSlider(type) {
     let itemSlider = document.querySelectorAll('.carousel .list .item')
