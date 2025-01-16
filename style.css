@@ -339,9 +339,10 @@ header a {
 }
 
 .player-music img {
-    padding-left: 5px;
-    width: 30px;
+    padding: 5px;
+    width: 35px;
     height: 35px;
+    animation: looping 2.3s linear infinite;
 }
 
 .player-music button{
@@ -356,6 +357,13 @@ header a {
     right: calc(85% - 90px);
     width: 180px;
     height: 40px;
+}
+
+@keyframes looping {
+    to {
+        rotate: 360deg;
+    }
+    
 }
 
 /* About page */
